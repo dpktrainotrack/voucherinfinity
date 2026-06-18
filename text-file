@@ -1,0 +1,52 @@
+  <section class="hero-section p-0">
+    <div class="hero-carousel owl-carousel owl-theme"> 
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container h-100" style="position: relative; z-index: 2;">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-10 mx-auto text-center hero-content">
+              <h1 class="text-white">Get Discounted
+                <span>PTE Exam Voucher</span>
+              </h1>
+              <p class="text-white">Book your exam today and save big with instant delivery.</p>
+              <div class="d-flex justify-content-center">
+                <a href="#vouchers" class="btn btn-primary-custom">Browse Vouchers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container h-100" style="position: relative; z-index: 2;">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-10 mx-auto text-center hero-content">
+              <h1 class="text-white">Looking for <span>PSI SFE Exam Voucher (UKVI)</span></h1>
+              <p class="text-white">10% off on PSI SFE Exam Vouchers. Limited Time Offer.</p>
+              <div class="d-flex justify-content-center">
+                <a href="#vouchers" class="btn btn-primary-custom">Get Voucher</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="hero-slide"
+        style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container h-100" style="position: relative; z-index: 2;">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-10 mx-auto text-center hero-content">
+              <h1 class="text-white">Get Discounted <span>TOEFL Exam Voucher</span></h1>
+              <p class="text-white">10% off on TOEFL Exam Vouchers. Limited Time Offer.</p>
+              <div class="d-flex justify-content-center">
+                <a href="exam-vouchers.html" class="btn btn-primary-custom">Get Voucher</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
