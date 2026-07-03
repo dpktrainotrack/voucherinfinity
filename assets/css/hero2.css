@@ -24,13 +24,14 @@
 
 
 .hero-left-wrapper {
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
     padding: 30px;
+    padding-top: 10px;
     border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
 
 }
 
@@ -704,4 +705,32 @@ nav.navbar {
     padding: 12px 20px;
     transition: transform 0.3s ease, background 0.3s ease;
     justify-content: center;
+}
+
+
+.highlight-points-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 20px;
+}
+
+.stat-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.highlight-points-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.highligh-desc {
+    color: rgba(255, 255, 255, 0.705);
+    font-size: 13px;
+    margin-top: 6px;
+    font-weight: 200;
 }
