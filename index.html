@@ -19,7 +19,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
 
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -36,11 +36,408 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/hero2.css">
   <link rel="stylesheet" href="assets/css/feature.css">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+
+  <style>
+    select#hef-city {
+      appearance: none;
+      color: #696969;
+      background: transparent;
+
+    }
+
+
+    .nav-link {
+      font-weight: 500;
+
+      margin: 0 10px;
+      position: relative;
+      transition: var(--transition);
+      color: white;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .hero-carousel {
+      padding-bottom: 60px;
+    }
+
+    .hero-carousel .owl-nav button.owl-prev {
+      left: 100px;
+      background-color: #283d63ab;
+      color: #ffffff81;
+    }
+
+    .hero-carousel .owl-nav button.owl-next {
+      right: 100px;
+      background-color: #283d63ab;
+      color: #ffffff81;
+    }
+
+    .hero-carousel .owl-nav button.owl-next:hover,
+    .hero-carousel .owl-nav button.owl-prev:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      padding: 88px 0;
+      margin-top: 40px;
+      background: #f4fbfb;
+    }
+
+    .contact-cta-shell {
+      overflow: hidden;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(21, 82, 89, .12);
+    }
+
+    .contact-cta-intro {
+      position: relative;
+      height: 100%;
+      padding: clamp(36px, 5vw, 64px);
+      color: #fff;
+      background: linear-gradient(145deg, #123e4a 0%, #1f7f83 100%);
+      overflow: hidden;
+    }
+
+    .contact-cta-intro::before,
+    .contact-cta-intro::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 50%;
+      content: '';
+      pointer-events: none;
+    }
+
+    .contact-cta-intro::before { width: 330px; height: 330px; top: -165px; right: -115px; }
+    .contact-cta-intro::after { width: 220px; height: 220px; bottom: -140px; left: -90px; }
+
+    .contact-cta .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 50px;
+      color: #fff;
+      background: rgba(255, 255, 255, .1);
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .contact-title {
+      position: relative;
+      z-index: 1;
+      max-width: 410px;
+      margin: 22px 0 16px;
+      color: #fff;
+      font-size: clamp(2rem, 3.3vw, 3rem);
+      font-weight: 700;
+      line-height: 1.16;
+    }
+
+    .contact-desc {
+      position: relative;
+      z-index: 1;
+      max-width: 440px;
+      margin: 0;
+      color: rgba(255, 255, 255, .8);
+      font-size: .98rem;
+      line-height: 1.75;
+    }
+
+    .contact-benefits { position: relative; z-index: 1; display: grid; gap: 15px; margin: 34px 0; }
+    .contact-benefit { display: flex; align-items: center; gap: 12px; font-size: .9rem; font-weight: 500; }
+    .contact-benefit i { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; color: #d4fffb; background: rgba(255, 255, 255, .13); font-size: .75rem; }
+    .contact-response { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 9px; color: rgba(255, 255, 255, .76); font-size: .8rem; }
+    .contact-response span { width: 8px; height: 8px; border-radius: 50%; background: #8af3c1; box-shadow: 0 0 0 5px rgba(138, 243, 193, .14); }
+
+    .contact-form-card { padding: clamp(30px, 5vw, 56px); }
+    .contact-form-card h3 { margin: 0; color: #173f49; font-size: clamp(1.45rem, 2.2vw, 1.9rem); font-weight: 700; }
+    .contact-form-card > p { margin: 8px 0 29px; color: #718187; font-size: .92rem; }
+    .contact-form-card label { display: block; margin-bottom: 8px; color: #38545b; font-size: .82rem; font-weight: 600; }
+    .contact-form-card .form-control { min-height: 50px; padding: 12px 14px; border: 1px solid #dce8e8; border-radius: 10px; color: #173f49; box-shadow: none; font-size: .9rem; }
+    .contact-form-card textarea.form-control { min-height: 108px; resize: vertical; }
+    .contact-form-card .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(59, 173, 168, .13); }
+    .contact-submit { width: 100%; padding: 14px 18px; border: 0; border-radius: 10px; color: #fff; background: linear-gradient(100deg, var(--primary-color), var(--secondary-color)); font-weight: 700; transition: transform .2s ease, box-shadow .2s ease; }
+    .contact-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(49, 143, 187, .23); }
+    .contact-form-note { display: block; margin-top: 15px; color: #8a989d; font-size: .75rem; text-align: center; }
+
+    @media (max-width: 991.98px) {
+      .contact-cta { padding: 60px 0; }
+      .contact-cta-intro { min-height: auto; }
+    }
+
+    @media (max-width: 575.98px) {
+      .contact-cta-shell { border-radius: 20px; }
+      .contact-cta-intro, .contact-form-card { padding: 30px 24px; }
+    }
+  </style>
+
 </head>
 
 <body>
+  <!-- <div class="top-header py-2">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between " style="gap:25px">
+        <a href="mailto:Info@voucherinfinity.com" class="" style="color: white;">
+          <i class="fa-regular fa-envelope me-1"></i> Info@voucherinfinity.com
+        </a>
+        <a href="tel:+917428563177" class="" style="color: white;">
+          <span class="me-1 text-white" style="max-width: 14px;"><svg data-name="Layer 1" viewBox="0 0 24 24" style="fill: white;
+    margin-right: 0.4rem;
+    width: 16px;
+    height: 16px;">
+              <path
+                d="M13,1a1,1,0,0,1,1-1A10.011,10.011,0,0,1,24,10a1,1,0,0,1-2,0,8.009,8.009,0,0,0-8-8A1,1,0,0,1,13,1Zm1,5a4,4,0,0,1,4,4,1,1,0,0,0,2,0,6.006,6.006,0,0,0-6-6,1,1,0,0,0,0,2Zm9.093,10.739a3.1,3.1,0,0,1,0,4.378l-.91,1.049c-8.19,7.841-28.12-12.084-20.4-20.3l1.15-1A3.081,3.081,0,0,1,7.26.906c.031.031,1.884,2.438,1.884,2.438a3.1,3.1,0,0,1-.007,4.282L7.979,9.082a12.781,12.781,0,0,0,6.931,6.945l1.465-1.165a3.1,3.1,0,0,1,4.281-.006S23.062,16.708,23.093,16.739Zm-1.376,1.454s-2.393-1.841-2.424-1.872a1.1,1.1,0,0,0-1.549,0c-.027.028-2.044,1.635-2.044,1.635a1,1,0,0,1-.979.152A15.009,15.009,0,0,1,5.9,9.3a1,1,0,0,1,.145-1S7.652,6.282,7.679,6.256a1.1,1.1,0,0,0,0-1.549c-.031-.03-1.872-2.425-1.872-2.425a1.1,1.1,0,0,0-1.51.039l-1.15,1C-2.495,10.105,14.776,26.418,20.721,20.8l.911-1.05A1.121,1.121,0,0,0,21.717,18.193Z">
+              </path>
+            </svg></span>+91 74285 63177
+        </a>
+
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="d-none"> </div> -->
 
   <!-- Hero Section -->
+  <!-- <section class="hero text-center text-lg-start" id="headerWrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNavbar2">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo-white.png" alt="" class="nav-logo" style="max-width: 100px;">
+
+        </a>
+
+        <button class=" navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#heronavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="heronavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item voucher-dropdown dropdown">
+              <a class="nav-link " href=" #" style="pointer-events: none;">
+                Vouchers <i class="fa-solid fa-caret-down "></i>
+              </a>
+
+
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=pte">PTE Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=gre">GRE Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=duolingo">Duolingo Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=toefl">TOEFL Voucher</a></li>
+              </ul>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="relative hero-content-wrapper py-5">
+
+      <video autoplay muted loop class="hero-bg-video">
+        <source src="assets/images/voucher-hero.mp4" type="video/mp4">
+      </video>
+      <div class="container pb-lg-3">
+        <div class="row align-items-center">
+          <div class="col-lg-8 col-12 hero-content  mb-5 mb-lg-0 ">
+            <div class="hero-left-wrapper">
+              <div class="hero-content ">
+                <h1 class=" text-white">Get
+                  <span>Exam Vouchers</span>
+                </h1>
+              </div>
+              <div class=" ">
+                <div class="highlight-points-wrapper">
+                  <div class="highlight-points-box">
+                    <div class=" d-flex align-items-center">
+                      <i class="fas fa-trophy text-white me-2"></i>
+                      <h6 class="stat-title text-white"> Highest Rated</h6>
+                    </div>
+                    <div class="highligh-desc">We are proud to be among the top-rated platforms that assist students
+                      with
+                      discount exam vouchers.</div>
+                  </div>
+                  <div class="highlight-points-box">
+                    <div class=" d-flex align-items-center">
+                      <i class="fas fa-certificate text-white me-2"></i>
+                      <h6 class=" stat-title text-white"> Authorized Reseller</h6>
+                    </div>
+                    <div class="highligh-desc">Infinity Voucher is an authorized exam voucher reseller and provides
+                      100%
+                      authenticated exam vouchers.</div>
+                  </div>
+                  <div class="highlight-points-box">
+                    <div class=" d-flex align-items-center">
+                      <i class="fas fa-credit-card text-white me-2"></i>
+                      <h6 class=" stat-title text-white">Secure Payments</h6>
+                    </div>
+                    <div class="highligh-desc">For your payment security we have partnered with the best payment
+                      gateway
+                      providers. Your payments are safe at our portal</div>
+                  </div>
+                  <div class="highlight-points-box">
+                    <div class=" d-flex align-items-center">
+                      <i class="fa-regular fa-clock text-white me-2"></i>
+                      <h6 class=" stat-title text-white">Prompt Response</h6>
+                    </div>
+                    <div class="highligh-desc">From booking to providing vouchers in your inbox we assure customers
+                      with
+                      quick response and 24X7 help desk service</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                <div class="">
+
+                  <a href="#vouchers" class="btn hef-btn">Explore More</a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="hero-Enquiry-form">
+   
+              <div class="hef-header">
+                <div class="hef-header-top">
+                  <h4 class="hef-title">Get a Free Quote</h4>
+                  <span class="hef-live-badge"><span class="hef-live-dot">
+                </div>
+                <p class="hef-subtitle">Instant reply · Trusted by 1,000+ students</p>
+              </div>
+
+              <div class="hef-body">
+                <form id="enquiryForm" novalidate>
+
+              
+                  <div class="hef-group">
+                    <div class="hef-field">
+                      <span class="hef-fi"><i class="fa-regular fa-user"></i></span>
+                      <input type="text" class="hef-input" id="hef-name" placeholder="Your Full Name" required>
+                  
+                    </div>
+                  </div>
+
+           
+                  <div class="hef-group">
+                    <div class="hef-field">
+                      <span class="hef-fi"><i class="fa-regular fa-envelope"></i></span>
+                      <input type="email" class="hef-input" id="hef-email" placeholder="Email Address " required>
+                   
+                    </div>
+                  </div>
+
+                 
+                  <div class="hef-group">
+                    <div class="hef-field">
+                      <span class="hef-fi"><i class="fa-solid fa-phone"></i></span>
+                      <span class="hef-phone-prefix">+91</span>
+                      <input type="tel" class="hef-input" id="hef-phone" placeholder="Mobile Number " required
+                        maxlength="10" pattern="[0-9]{10}">
+                    
+                    </div>
+                  </div>
+              
+                  <div class="hef-group">
+                    <div class="hef-field">
+                      <span class="hef-fi"><i class="fa-solid fa-city"></i></span>
+
+                      <select class="hef-input" id="hef-city" required>
+                        <option value="">Select City</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                        <option value="Vijayawada">Vijayawada</option>
+                        <option value="Guntur">Guntur</option>
+                        <option value="Tirupati">Tirupati</option>
+                        <option value="Nellore">Nellore</option>
+                        <option value="Kurnool">Kurnool</option>
+                        <option value="Warangal">Warangal</option>
+                        <option value="Karimnagar">Karimnagar</option>
+                        <option value="Nizamabad">Nizamabad</option>
+                        <option value="Mahbubnagar">Mahbubnagar</option>
+                        <option value="Adilabad">Adilabad</option>
+                        <option value="Suryapet">Suryapet</option>
+                        <option value="Nalgonda">Nalgonda</option>
+                        <option value="Khammam">Khammam</option>
+                        <option value="Siddipet">Siddipet</option>
+                        <option value="Medak">Medak</option>
+                        <option value="Sangareddy">Sangareddy</option>
+                        <option value="Jangaon">Jangaon</option>
+                        <option value="Mulugu">Mulugu</option>
+                        <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+                        <option value="Narayanpet">Narayanpet</option>
+                        <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+                        <option value="Jagtial">Jagtial</option>
+                        <option value="Peddapalli">Peddapalli</option>
+                        <option value="Komaram Bheem">Komaram Bheem</option>
+                      </select>
+               
+                    </div>
+                  </div>
+
+
+                
+                  <div class="hef-group">
+                    <div class="hef-field hef-field--textarea">
+                      <span class="hef-fi"><i class="fa-regular fa-message"></i></span>
+                      <textarea class="hef-textarea hef-input" id="hef-msg" rows="3" placeholder="Your Message "
+                        required></textarea>
+                     
+                    </div>
+                  </div>
+
+                 
+                  <button type="submit" class="hef-btn">
+                    <span class="hef-btn-txt">Request Free Quote</span>
+                 
+                  </button>
+
+                
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+
+
   <section class="hero text-center text-lg-start" id="headerWrapper"
     style="background-image: url('assets/images/home/hero-bg.webp');">
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNavbar2">
@@ -49,60 +446,6 @@
           <img src="assets/images/logo-white.png" alt="" class="nav-logo" style="max-width: 100px;">
         </a>
 
-        <!-- Megamenu Toggler -->
-        <!-- <div class="dropdown me-auto   position-static">
-          <div class=" theme-primary dropdown-toggle courses-btn d-flex align-items-center gap-2 px-2 px-md-4 py-2"
-            id="coursesMegaMenuButton" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-            Vouchers
-          </div> 
-          <div class="dropdown-menu w-100 mega-menu-dropdown  border-0 mt-3 p-3 "
-            aria-labelledby="coursesMegaMenuButton" style="background-color: transparent;">
-            <div class="container p-0 pb-5 rounded">
-              <div class="row g-0"> 
-                <div class="col-md-12 p-sm-4 p-2 bg-white">
-                  <div class="voucher-drawer-wrapper ">
-                    <div class="">
-                      <a href="#" class="text-decoration-none text-dark" style="cursor: pointer;">
-                        <div class="icon-wrapper rounded  ">
-                          <img src="assets/images/vouchers/duolingo.png" alt="">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="">
-                      <a href="#" class="text-decoration-none text-dark" style="cursor: pointer;">
-                        <div class="icon-wrapper rounded  ">
-                          <img src="assets/images/vouchers/gre.webp" alt=""">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="">
-                      <a href=" #" class="text-decoration-none text-dark" style="cursor: pointer;">
-                          <div class="icon-wrapper rounded  ">
-                            <img src="assets/images/vouchers/ielts.webp" alt=""">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="">
-                      <a href=" #" class="text-decoration-none text-dark" style="cursor: pointer;">
-                            <div class="icon-wrapper rounded  ">
-                              <img src="assets/images/vouchers/pte.webp" alt="">
-                            </div>
-                      </a>
-                    </div>
-                    <div class="">
-                      <a href="#" class="text-decoration-none text-dark" style="cursor: pointer;">
-                        <div class="icon-wrapper rounded  ">
-                          <img src="assets/images/vouchers/selt.webp" alt="">
-                        </div>
-                      </a>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
         <button class=" navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#heronavbar">
           <span class="navbar-toggler-icon"></span>
@@ -112,16 +455,30 @@
             <li class="nav-item">
               <a class="nav-link active" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Vouchers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
+            <li class="nav-item voucher-dropdown dropdown">
+              <a class="nav-link " href=" #" style="pointer-events: none;">
+                Vouchers <i class="fa-solid fa-caret-down "></i>
+              </a>
 
+
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=pte">PTE Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=gre">GRE Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=duolingo">Duolingo Voucher</a></li>
+                <li><a class="dropdown-item" href="exam-voucher-detail.html?exam=toefl">TOEFL Voucher</a></li>
+              </ul>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
           </ul>
           <div class="d-flex gap-2 hero-cta-btn">
             <a href="tel:+917428563177" class="btn btn-primary-custom  "><i class="fa-solid fa-phone me-1"></i>+91 74285
@@ -129,80 +486,12 @@
           </div>
 
         </div>
-        <!-- ===CTA-Btuuon -->
+
       </div>
     </nav>
 
     <div class="hero-carousel owl-carousel olw-theme">
-      <div class="item">
-        <div class="container pt-5 sm-pt-2">
-          <div class="row align-items-center">
-            <div class="col-lg-8 col-12 hero-content  mb-5 mb-lg-0 ">
-              <div class="hero-left-wrapper">
-                <div class="hero-content ">
-                  <h1 class=" text-white">Get Discounted
-                    <span>PTE Exam Voucher</span>
-                  </h1>
-                </div>
-                <div class=" ">
-                  <div class="highlight-points-wrapper">
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white"> Highest Rated</h6>
-                      </div>
-                      <div class="highligh-desc">We are proud to be among the top-rated platforms that assist students
-                        with
-                        discount exam vouchers.</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white"> Authorized Reseller</h6>
-                      </div>
-                      <div class="highligh-desc">Infinity Voucher is an authorized exam voucher reseller and provides
-                        100%
-                        authenticated exam vouchers.</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Secure Payments</h6>
-                      </div>
-                      <div class="highligh-desc">For your payment security we have partnered with the best payment
-                        gateway
-                        providers. Your payments are safe at our portal</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Prompt Response</h6>
-                      </div>
-                      <div class="highligh-desc">From booking to providing vouchers in your inbox we assure customers
-                        with
-                        quick response and 24X7 help desk service</div>
-                    </div>
-                  </div>
 
-                </div>
-                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                  <a href="#vouchers" class="btn theme-primary ">Explore More</a>
-
-                </div>
-                <!-- <div class="">
-              <a href="#vouchers" class="btn btn-primary-custom-2">Explore Vouchers</a>
-            </div> -->
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-12">
-              <div class="r">
-                <img src="assets/images/home/hero-right-img.webp" alt="" class="img-fluid rounded-4">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="item">
         <div class="container pt-5 sm-pt-2">
           <div class="row align-items-center">
@@ -215,45 +504,32 @@
                 </div>
                 <div class=" ">
                   <div class="highlight-points-wrapper">
+
                     <div class="highlight-points-box">
                       <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white"> Lorem ipsum dolor</h6>
+                        <i class="fas fa-trophy text-white me-2"></i>
+                        <h6 class="stat-title text-white"> Highest Rated</h6>
                       </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
+                      <div class="highligh-desc">We are proud to be among the top-rated platforms that assist students
+                        with
+                        discount exam vouchers.</div>
                     </div>
                     <div class="highlight-points-box">
                       <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
+                        <i class="fas fa-certificate text-white me-2"></i>
+                        <h6 class=" stat-title text-white"> Authorized Reseller</h6>
                       </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
-                      </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
-                      </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
+                      <div class="highligh-desc">Infinity Voucher is an authorized exam voucher reseller and provides
+                        100%
+                        authenticated exam vouchers.</div>
                     </div>
                   </div>
                   <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                    <a href="#vouchers" class="btn theme-primary ">Explore More</a>
+                    <div>
+                      <a href="#vouchers" class="btn hef-btn">Explore More</a>
+                    </div>
                   </div>
-                  <!-- <div class="">
-              <a href="#vouchers" class="btn btn-primary-custom-2">Explore Vouchers</a>
-            </div> -->
+
                 </div>
               </div>
             </div>
@@ -278,45 +554,31 @@
                 </div>
                 <div class=" ">
                   <div class="highlight-points-wrapper">
+
                     <div class="highlight-points-box">
                       <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white"> Lorem ipsum dolor</h6>
+                        <i class="fas fa-credit-card text-white me-2"></i>
+                        <h6 class=" stat-title text-white">Secure Payments</h6>
                       </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
+                      <div class="highligh-desc">For your payment security we have partnered with the best payment
+                        gateway
+                        providers. Your payments are safe at our portal</div>
                     </div>
                     <div class="highlight-points-box">
                       <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
+                        <i class="fa-regular fa-clock text-white me-2"></i>
+                        <h6 class=" stat-title text-white">Prompt Response</h6>
                       </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
-                      </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
-                    </div>
-                    <div class="highlight-points-box">
-                      <div class=" d-flex align-items-center">
-                        <i class="fas fa-check-circle fa-2x text-white me-2"></i>
-                        <h6 class=" stat-title text-white">Lorem ipsum dolor</h6>
-                      </div>
-                      <div class="highligh-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima
-                        fuga incidunt sequi accusamus, possimus eaque. Distinctio amet,</div>
+                      <div class="highligh-desc">From booking to providing vouchers in your inbox we assure customers
+                        with
+                        quick response and 24X7 help desk service</div>
                     </div>
                   </div>
                   <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                    <a href="#vouchers" class="btn theme-primary ">Explore More</a>
+                    <div>
+                      <a href="#vouchers" class="btn hef-btn">Explore More</a>
+                    </div>
                   </div>
-                  <!-- <div class="">
-              <a href="#vouchers" class="btn btn-primary-custom-2">Explore Vouchers</a>
-            </div> -->
                 </div>
               </div>
             </div>
@@ -330,67 +592,23 @@
         </div>
       </div>
     </div>
-
-
     <div class="hero-overlay"></div>
   </section>
-
-  <!-- Sticky Navbar -->
-  <!-- <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.png" alt="header-logo" style="max-width: 100px;" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="exam-vouchers.html"> Vouchers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <a href="contact.html" class="btn btn-primary-custom">Get Started</a>
-        </div>
-      </div>
-    </div>
-  </nav> -->
-
   <!-- about-intro-section -->
-  <!-- <section class="about-intro-section ">
-    <div class="container py-5">
-      <div class="row align-items-center g-5"> 
-        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-          <div class="about-image-wrapper position-relative"> 
-            <img src="assets/images/home/intro.jpg" alt="Students"
-              class="img-fluid rounded-4 shadow-lg position-relative z-1" style="border: 8px solid #fff;"> 
-            <div class="floating-badge-modern glass-card p-3 d-flex align-items-center gap-3 shadow-lg"
-              data-aos="zoom-in" data-aos-delay="500">
-              <div
-                class="icon-box bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center"
-                style="width: 50px; height: 50px;">
-                <i class="fas fa-user-graduate fs-4"></i>
-              </div> 
-            </div>
+  <section class="about-intro-section  pt-5 ">
+    <div class="container ">
+      <div class="row align-items-center">
+        <div class="col-lg-6 d-lg-block mt-lg-auto d-none" data-aos="fade-right" data-aos-duration="1000">
+          <div class="about-image-wrapper position-relative">
+            <img src="assets/images/home/left1.webp" alt="intro" class="img-fluid rounded-4  position-relative z-1">
+
           </div>
-        </div> 
-        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-          <div class="about-content-wrapper "> 
-            <h2 class="display-5  mb-4">Elevate Your Exam <br><span
-                class="text-primary-custom position-relative z-1">Success Journey 
-              </span></h2> 
+        </div>
+        <div class="col-lg-6 col-12 pb-5 pb-lg-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="about-content-wrapper ">
+            <h2 class="display-6  mb-4">Elevate Your Exam <span class="text-primary-custom position-relative z-1">
+                Success Journey
+              </span></h2>
             <p class="text-muted  mb-4">
               Welcome to Infinity Voucher! A name committed to excellent academic services to fast forward your study
               abroad venture. We are a premium provider of <strong>PTE, TOEFL, SELT, GRE, and Duolingo</strong> exam
@@ -400,20 +618,23 @@
               huge money on PTE, TOEFL, SELT exam fees. Our discount exam vouchers will help you book exams at a lower
               price and
               attain your envisioned goals easily.
-            </p> 
-            <a href="about.html" class="btn btn-outline-custom  mt-2">Discover More <i
+            </p>
+            <p class="text-muted">We provide reliable IT solutions with premium support,
+              fast delivery and industry-leading expertise.
+            </p>
+            <a href="about.html" class="btn btn-outline-custom mb-5 mt-2">Discover More <i
                 class="fas fa-arrow-right ms-2"></i></a>
           </div>
         </div>
 
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- Featured Vouchers Section -->
   <section class="features-section py-5">
     <div class="container">
 
-      <div class="section-title text-center mb-5">
+      <div class="section-title text-center">
 
         <h2>Our Key <span>Features</span></h2>
         <p>
@@ -589,9 +810,9 @@
         <h2> Our Exam<span class="text-primary-custom"> Vouchers</span></h2>
         <p>Get the best deals on our top-selling exam vouchers. Limited time offers available!</p>
       </div>
-      <div class="vouchers-grid-custom">
+      <div class=" our-exam-vouchers owl-carousel owl-theme">
         <!-- Voucher 1 -->
-        <div class="" data-aos="fade-up" data-aos-delay="100">
+        <div class="item" data-aos="fade-up" data-aos-delay="100">
           <div class="voucher-card-premium">
             <div class="voucher-card-header bg-light-orange">
 
@@ -611,15 +832,15 @@
                 <li><i class="fas fa-check-circle text-success"></i> Instant Email Delivery</li>
               </ul>
               <div class="d-flex gap-2">
-                <a href="#" class="btn-primary-custom  shadow-sm">Details</a>
-                <a href="#" class="btn-secondary-custom  shadow-sm">Buy</a>
+                <a href="exam-voucher-detail.html" class="btn-primary-custom  shadow-sm">Details</a>
+                <button href="#" class="btn-secondary-custom  shadow-sm " popovertarget="contactPopup">Enquiry</button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Voucher 2 -->
-        <div class="" data-aos="fade-up" data-aos-delay="200">
+        <div class="item" data-aos="fade-up" data-aos-delay="200">
           <div class="voucher-card-premium">
             <div class="voucher-card-header bg-light-orange">
 
@@ -639,15 +860,15 @@
                 <li><i class="fas fa-check-circle text-success"></i> Instant Email Delivery</li>
               </ul>
               <div class="d-flex gap-2">
-                <a href="#" class="btn-primary-custom  shadow-sm">Details</a>
-                <a href="#" class="btn-secondary-custom  shadow-sm">Buy</a>
+                <a href="exam-voucher-detail.html" class="btn-primary-custom  shadow-sm">Details</a>
+                <button href="#" class="btn-secondary-custom  shadow-sm " popovertarget="contactPopup">Enquiry</button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Voucher 3 -->
-        <div class="" data-aos="fade-up" data-aos-delay="300">
+        <div class="item" data-aos="fade-up" data-aos-delay="300">
           <div class="voucher-card-premium">
             <div class="voucher-card-header bg-light-orange">
 
@@ -667,14 +888,14 @@
                 <li><i class="fas fa-check-circle text-success"></i> Instant Email Delivery</li>
               </ul>
               <div class="d-flex gap-2">
-                <a href="#" class="btn-primary-custom  shadow-sm">Details</a>
-                <a href="#" class="btn-secondary-custom  shadow-sm">Buy</a>
+                <a href="exam-voucher-detail.html" class="btn-primary-custom  shadow-sm">Details</a>
+                <button href="#" class="btn-secondary-custom  shadow-sm " popovertarget="contactPopup">Enquiry</button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="" data-aos="fade-up" data-aos-delay="300">
+        <div class="item" data-aos="fade-up" data-aos-delay="300">
           <div class="voucher-card-premium">
             <div class="voucher-card-header bg-light-orange">
 
@@ -694,60 +915,46 @@
                 <li><i class="fas fa-check-circle text-success"></i> Instant Email Delivery</li>
               </ul>
               <div class="d-flex gap-2">
-                <a href="#" class="btn-primary-custom  shadow-sm">Details</a>
-                <a href="#" class="btn-secondary-custom  shadow-sm">Buy</a>
+                <a href="exam-voucher-detail.html" class="btn-primary-custom  shadow-sm">Details</a>
+                <button href="#" class="btn-secondary-custom  shadow-sm " popovertarget="contactPopup">Enquiry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-aos="fade-up" data-aos-delay="300">
+          <div class="voucher-card-premium">
+            <div class="voucher-card-header bg-light-orange">
+
+              <img src="assets/images/vouchers/duolingo.webp" alt="TOEFL Voucher" class="voucher-logo">
+            </div>
+            <div class="voucher-card-body">
+              <h4 class="voucher-title">Duolingo</h4>
+              <div class="voucher-pricing">
+                <span class="price-current">₹ xxxx.xx</span>
+                <span class="price-original"><del>₹ xxxx.xx</del></span>
+              </div>
+              <hr class="voucher-divider">
+              <ul class="voucher-features-modern">
+                <li><i class="fas fa-check-circle text-success"></i> Valid for 6 Months</li>
+                <li><i class="fas fa-check-circle text-success"></i> Official ETS Voucher</li>
+                <li><i class="fas fa-check-circle text-success"></i> Universally Accepted</li>
+                <li><i class="fas fa-check-circle text-success"></i> Instant Email Delivery</li>
+              </ul>
+              <div class="d-flex gap-2">
+                <a href="exam-voucher-detail.html" class="btn-primary-custom  shadow-sm">Details</a>
+                <button href="#" class="btn-secondary-custom  shadow-sm " popovertarget="contactPopup">Enquiry</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="text-center mt-5">
-        <a href="vouchers.html" class="btn btn-outline-custom">View All Vouchers</a>
-      </div> -->
     </div>
   </section>
-
-  <section class="py-5">
-    <div class="container">
-      <div>
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 class="display-6  ">How It <span class="text-primary-custom">Works?</span></h2>
-          <p class="text-muted fs-5">Simple & transparent process to get your exam vouchers in just 3 steps.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box light-green">
-            <span class="w-icon"><i class="fas fa-check-square"></i></span>
-            <h5>Select Voucher</h5>
-            <p>First you have to signup and complete your profile with your updated info.</p>
-            <span class="arrow"><i class="fas fa-long-arrow-alt-right fa-fw"></i></span>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box light-orange">
-            <span class="w-icon"><i class="fa fa-credit-card"></i></span>
-            <h5>Make Payment</h5>
-            <p>Search &amp; shortlist from 1000's of institution that matching Your profile.</p>
-            <span class="arrow"><i class="fas fa-long-arrow-alt-right fa-fw"></i></span>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box light-blue">
-            <span class="w-icon"><i class="fas fa-file-invoice"></i></span>
-            <h5>Get Voucher</h5>
-            <p>Our experts will help &amp; guide with end to end application process for successful admission</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Why Choose Us -->
-  <section class="py-5  position-relative" id="why-choose-us">
+  <!-- <section class="py-5  position-relative" id="why-choose-us">
     <div class="container pb-4">
       <div>
-        <div class="section-title text-center mb-5" data-aos="fade-up">
+        <div class="section-title text-center" data-aos="fade-up">
           <h2 class="display-6  ">Why Choose <span class="text-primary-custom">Voucher Infinity?</span></h2>
           <p class="text-muted fs-5">We are committed to providing the best service and value to our students
             globally.</p>
@@ -755,7 +962,7 @@
       </div>
       <div class="row align-items-center">
 
-        <!-- Why Choose Us Column -->
+
         <div class="col-lg-6 mb-5 mb-lg-0">
 
 
@@ -802,50 +1009,57 @@
           </div>
         </div>
 
-        <!-- How It Works Column -->
+
         <div class="col-lg-5 offset-lg-1">
           <div class="img-wrapper">
             <img src="assets/images/home/why-choose-us.jpg" alt="" class="img-fluid">
           </div>
-          <!-- <div class="how-it-works-wrapper p-4 p-md-5 bg-white rounded-4 shadow-lg" data-aos="zoom-in"
-            data-aos-delay="200">
-            <h3 class="  mb-4 text-center">How It Works</h3>
 
-            <div class="step-modern d-flex mb-4" data-aos="fade-left" data-aos-delay="300">
-              <div class="step-number me-3 shadow-sm">1</div>
-              <div>
-                <h5 class="  mb-1">Select Voucher</h5>
-                <p class="text-muted small mb-0">Choose your required exam voucher from our list.</p>
-              </div>
-            </div>
-
-            <div class="step-modern d-flex mb-4" data-aos="fade-left" data-aos-delay="400">
-              <div class="step-number me-3 shadow-sm">2</div>
-              <div>
-                <h5 class="  mb-1">Make Payment</h5>
-                <p class="text-muted small mb-0">Pay securely using UPI, Card, or Net Banking.</p>
-              </div>
-            </div>
-
-            <div class="step-modern d-flex mb-4" data-aos="fade-left" data-aos-delay="500">
-              <div class="step-number me-3 shadow-sm">3</div>
-              <div>
-                <h5 class="  mb-1">Get Email</h5>
-                <p class="text-muted small mb-0">Receive your voucher code instantly via email.</p>
-              </div>
-            </div>
-
-            <div class="step-modern d-flex" data-aos="fade-left" data-aos-delay="600">
-              <div class="step-number me-3 shadow-sm">4</div>
-              <div>
-                <h5 class="  mb-1">Book Exam</h5>
-                <p class="text-muted small mb-0">Use the code to book your exam on the official site.</p>
-              </div>
-            </div>
-
-          </div> -->
         </div>
 
+      </div>
+    </div>
+  </section> -->
+
+  <section class="py-5">
+    <div class="container">
+      <div>
+        <div class="section-title text-center" data-aos="fade-up">
+          <h2 class="display-6  ">How It <span class="text-primary-custom">Works?</span></h2>
+          <p class="text-muted ">Simple & transparent process to get your exam vouchers in just 3 steps.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="work-box light-green">
+            <span class="w-icon"><i class="fas fa-check-square"></i></span>
+            <h6>Select Voucher</h6>
+            <!-- <p>First you have to signup and complete your profile with your updated info.</p> -->
+            <span class="arrow"><i class="fas fa-long-arrow-alt-right fa-fw"></i></span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="work-box light-orange">
+            <span class="w-icon"><i class="fa fa-credit-card"></i></span>
+            <h6>Make Payment</h6>
+            <!-- <p>Search &amp; shortlist from 1000's of institution that matching Your profile.</p> -->
+            <span class="arrow"><i class="fas fa-long-arrow-alt-right fa-fw"></i></span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="work-box light-orange">
+            <span class="w-icon"><i class="fa fa-envelope"></i></span>
+            <h6>Receive Email</h6>
+            <span class="arrow"><i class="fas fa-long-arrow-alt-right fa-fw"></i></span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="work-box light-blue">
+            <span class="w-icon"><i class="fas fa-file-invoice"></i></span>
+            <h6>Get Voucher</h6>
+            <!-- <p>Our experts will help &amp; guide with end to end application process for successful admission</p> -->
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -866,6 +1080,7 @@
                   <tr>
                     <th>Feature</th>
                     <th>
+
                       <div class="brand-title">
                         <span class="text-dark-blue">Voucher</span>
                         <span class="text-primary-color">Infinity</span>
@@ -875,7 +1090,9 @@
                       </div>
                     </th>
                     <th>
-                      <span>Other Providers</span>
+                      <div class="brand-title">
+                        <span>Other Providers</span>
+                      </div>
                       <div class="header-watermark watermark-danger">
                         <i class="fa-solid fa-xmark"></i>
                       </div>
@@ -911,7 +1128,7 @@
                   <tr>
                     <td>
                       <div class="feature-cell d-flex align-items-center">
-                        <div class="feature-icon-wrapper icon-bg-2">
+                        <div class="feature-icon-wrapper icon-bg-1">
                           <i class="fa-solid fa-bolt"></i>
                         </div>
                         <div class="feature-text">
@@ -936,7 +1153,7 @@
                   <tr>
                     <td>
                       <div class="feature-cell d-flex align-items-center">
-                        <div class="feature-icon-wrapper icon-bg-3">
+                        <div class="feature-icon-wrapper icon-bg-1">
                           <i class="fa-solid fa-headset"></i>
                         </div>
                         <div class="feature-text">
@@ -961,7 +1178,7 @@
                   <tr>
                     <td>
                       <div class="feature-cell d-flex align-items-center">
-                        <div class="feature-icon-wrapper icon-bg-4">
+                        <div class="feature-icon-wrapper icon-bg-1">
                           <i class="fa-solid fa-shield-halved"></i>
                         </div>
                         <div class="feature-text">
@@ -995,89 +1212,88 @@
   <!-- Testimonials Section -->
   <section class="position-relative  " id="testimonial-section">
     <div class="container py-5">
-      <div class="section-title text-center mb-5" data-aos="fade-up">
+      <div class="section-title text-center" data-aos="fade-up">
         <h2 class="display-6  ">What Our <span class="text-primary-custom">Students Say</span></h2>
-        <p class="text-muted fs-5">Join thousands of successful candidates who trusted Voucher Infinity.</p>
+        <p class="text-muted">Join thousands of successful candidates who trusted Voucher Infinity.</p>
       </div>
-      <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-card-modern">
-          <i class="fas fa-quote-right quote-icon-modern"></i>
-          <div class="stars-modern">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text-modern">"Got my PTE voucher within 2 minutes of payment. Saved a good amount of
-            money. Highly recommended for all students!"</p>
-          <div class="user-info-modern">
-            <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=fc4d01&color=fff&bold=true"
-              alt="Rahul Sharma" class="user-avatar-modern">
-            <div>
-              <h5 class="mb-0 fs-6  ">Rahul Sharma</h5>
-              <small class="text-muted">PTE Aspirant</small>
+      <div class="col-lg-11 mx-auto">
+        <div class="owl-carousel owl-theme testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card-modern">
+            <i class="fas fa-quote-right quote-icon-modern"></i>
+            <div class="stars-modern">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text-modern">"Got my PTE voucher within 2 minutes of payment. Saved a good amount of
+              money. Highly recommended for all students!"</p>
+            <div class="user-info-modern">
+              <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=fc4d01&color=fff&bold=true"
+                alt="Rahul Sharma" class="user-avatar-modern">
+              <div>
+                <h5 class="mb-0 fs-6  ">Rahul Sharma</h5>
+                <small class="text-muted">PTE Aspirant</small>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card-modern">
-          <i class="fas fa-quote-right quote-icon-modern"></i>
-          <div class="stars-modern">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <p class="testimonial-text-modern">"The customer support is amazing. I had a query regarding AWS voucher
-            validity, and they resolved it on WhatsApp instantly."</p>
-          <div class="user-info-modern">
-            <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=e69603&color=fff&bold=true"
-              alt="Priya Patel" class="user-avatar-modern">
-            <div>
-              <h5 class="mb-0 fs-6  ">Priya Patel</h5>
-              <small class="text-muted">IT Professional</small>
+          <div class="testimonial-card-modern">
+            <i class="fas fa-quote-right quote-icon-modern"></i>
+            <div class="stars-modern">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text-modern">"The customer support is amazing. I had a query regarding AWS voucher
+              validity, and they resolved it on WhatsApp instantly."</p>
+            <div class="user-info-modern">
+              <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=e69603&color=fff&bold=true"
+                alt="Priya Patel" class="user-avatar-modern">
+              <div>
+                <h5 class="mb-0 fs-6  ">Priya Patel</h5>
+                <small class="text-muted">IT Professional</small>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card-modern">
-          <i class="fas fa-quote-right quote-icon-modern"></i>
-          <div class="stars-modern">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text-modern">"Very smooth process. I was skeptical first, but the GRE voucher was 100%
-            genuine and worked flawlessly on ETS website."</p>
-          <div class="user-info-modern">
-            <img src="https://ui-avatars.com/api/?name=Amit+Kumar&background=fc4d01&color=fff&bold=true"
-              alt="Amit Kumar" class="user-avatar-modern">
-            <div>
-              <h5 class="mb-0 fs-6  ">Amit Kumar</h5>
-              <small class="text-muted">MS Student</small>
+          <div class="testimonial-card-modern">
+            <i class="fas fa-quote-right quote-icon-modern"></i>
+            <div class="stars-modern">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text-modern">"Very smooth process. I was skeptical first, but the GRE voucher was 100%
+              genuine and worked flawlessly on ETS website."</p>
+            <div class="user-info-modern">
+              <img src="https://ui-avatars.com/api/?name=Amit+Kumar&background=fc4d01&color=fff&bold=true"
+                alt="Amit Kumar" class="user-avatar-modern">
+              <div>
+                <h5 class="mb-0 fs-6  ">Amit Kumar</h5>
+                <small class="text-muted">MS Student</small>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-
-
   <!-- Brands Section -->
   <section class="brands-section text-center">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
+    <div class="container mx-auto">
+      <div class="row gy-3 d-flex justify-content-center">
         <!-- Placeholder text for logos -->
-        <div class="col-4 col-md-2 mb-3 mb-md-0">
+        <div class="col-6 col-lg-2 col-md-3">
           <div class="brand-logo-wrapper">
             <img src="assets/images/brands-logos/1.png" alt="" class="img-fluid">
           </div>
         </div>
-        <div class="col-4 col-md-2 mb-3 mb-md-0">
+        <div class="col-6 col-lg-2 col-md-3">
           <div class="brand-logo-wrapper">
             <img src="assets/images/brands-logos/2.png" alt="" class="img-fluid">
           </div>
         </div>
-        <div class="col-4 col-md-2 mb-3 mb-md-0">
+        <div class="col-6 col-lg-2 col-md-3">
           <div class="brand-logo-wrapper">
             <img src="assets/images/brands-logos/3.png" alt="" class="img-fluid">
           </div>
         </div>
-        <div class="col-4 col-md-2 mb-3 mb-md-0">
+        <div class="col-6 col-lg-2 col-md-3">
           <div class="brand-logo-wrapper">
             <img src="assets/images/brands-logos/4.png" alt="" class="img-fluid">
           </div>
@@ -1088,10 +1304,7 @@
     </div>
   </section>
 
-
-
   <!-- FAQ Section -->
-
   <section class="py-5">
     <div class="container">
       <div class="text-center">
@@ -1100,14 +1313,15 @@
           <p>Got questions? We've got answers.</p>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4">
+      <div class="row justify-content-center gy-4">
+        <div class="col-lg-4 d-none d-lg-block">
           <div class="img-wrapper">
-            <img src="assets/images/home/faq2.jpg" alt="" class="img-fluid">
+            <img
+              src="https://img.magnific.com/premium-photo/3d-search-bar-template-website-navigation-search-web-browser-3d-arrow-mouse-cursor-ask-question-template-banner-support-faq-information-web-bar-vector_1036687-62274.jpg?w=360"
+              alt="" class="img-fluid">
           </div>
         </div>
         <div class="col-lg-8">
-
           <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="100">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -1177,160 +1391,147 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
   <!-- Contact CTA Section -->
-  <section class="contact-cta pt-5">
+  <section class="contact-cta" aria-labelledby="contact-cta-title">
     <div class="container">
-      <div class="row align-items-center g-5">
+      <div class="contact-cta-shell">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="contact-cta-intro">
+              <span class="section-tag"><i class="fa-solid fa-headset"></i> Need help choosing?</span>
+              <h2 class="contact-title" id="contact-cta-title">Get the right exam voucher, without the guesswork.</h2>
+              <p class="contact-desc">Tell us what you are preparing for and our voucher specialists will point you to the best option for your exam.</p>
 
-        <!-- Left Content -->
-        <div class="col-lg-5">
-
-          <span class="section-tag">
-            <i class="fa-solid fa-headset"></i>
-            Let's Talk
-          </span>
-
-          <h2 class="contact-title mt-3">
-            Ready to Grow <br>
-            Your Business?
-          </h2>
-
-          <p class="contact-desc">
-            Get in touch with our experts today. Whether you need a website,
-            web application, digital marketing, or technical consultation,
-            we're here to help your business move forward.
-          </p>
-
-          <div class="contact-info">
-            <img src="assets/images/home/left1.webp" alt="">
-          </div>
-        </div>
-
-        <!-- Right Form -->
-        <div class="col-lg-7">
-
-          <div class="contact-form-card">
-
-            <h3 class="mb-4 text-center">
-              Request a Free Consultation
-            </h3>
-
-            <form>
-
-              <div class="row">
-
-                <div class="col-md-6 mb-3">
-                  <label>Name</label>
-                  <input type="text" class="form-control" placeholder="John Doe">
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label>Email</label>
-                  <input type="email" class="form-control" placeholder="john@example.com">
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label>Phone Number</label>
-                  <input type="text" class="form-control" placeholder="+91 9876543210">
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label>Choose Vouchers</label>
-                  <select class="form-control">
-                    <option value="">Select Voucher</option>
-                    <option value="pte">PTE</option>
-                    <option value="gre">GRE</option>
-                    <option value="toefl">TOEFL</option>
-                    <option value="aws">AWS</option>
-                  </select>
-                </div>
-
-                <div class="col-12 mb-3">
-                  <label>Your Message</label>
-                  <textarea rows="5" class="form-control" placeholder="Tell us about your project..."></textarea>
-                </div>
-
-                <div class="col-12">
-
-                  <button class="theme-btn w-100">
-                    Send Message
-                    <i class="fa-solid fa-paper-plane ms-2"></i>
-                  </button>
-
-                </div>
-
+              <div class="contact-benefits">
+                <div class="contact-benefit"><i class="fa-solid fa-shield-halved"></i><span>Official vouchers from trusted providers</span></div>
+                <div class="contact-benefit"><i class="fa-solid fa-bolt"></i><span>Fast guidance from our expert team</span></div>
               </div>
 
-            </form>
-
+              <div class="contact-response"><span></span> Usually replies within one business day</div>
+            </div>
           </div>
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <h3>Find your perfect voucher</h3>
+              <p>Share a few details and we will help you get started.</p>
 
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6"><label for="contact-name">Full name</label><input id="contact-name" type="text" class="form-control" placeholder="John Doe" required></div>
+                  <div class="col-md-6"><label for="contact-email">Email address</label><input id="contact-email" type="email" class="form-control" placeholder="john@example.com" required></div>
+                  <div class="col-md-6"><label for="contact-phone">Phone number</label><input id="contact-phone" type="tel" class="form-control" placeholder="+91 98765 43210"></div>
+                  <div class="col-md-6"><label for="contact-voucher">Exam voucher</label><select id="contact-voucher" class="form-control" required><option value="">Select an exam</option><option value="pte">PTE</option><option value="gre">GRE</option><option value="toefl">TOEFL</option><option value="aws">AWS</option></select></div>
+                  <div class="col-12"><label for="contact-message">How can we help?</label><textarea id="contact-message" rows="4" class="form-control" placeholder="Tell us which exam you are taking or ask us a question."></textarea></div>
+                  <div class="col-12"><button type="submit" class="contact-submit">Request voucher guidance <i class="fa-solid fa-arrow-right ms-2"></i></button><small class="contact-form-note"><i class="fa-solid fa-lock me-1"></i>Your details stay private and secure.</small></div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
+  <div id="contactPopup" popover>
+    <div class="popup-wrapper">
 
+      <button class="popup-close" popovertarget="contactPopup" popovertargetaction="hide">
+        ✕
+      </button>
+
+      <div class="popup-content">
+
+        <div class="popup-info">
+
+
+          <h2>Let's Discuss</h2>
+
+          <p>
+            Tell us about your requirements and our experts will
+            contact you within 24 hours.
+          </p>
+
+          <!-- <ul>
+            <li>✔ Expert Guidance</li>
+            <li>✔ Fast Response</li>
+            <li>✔ Free Quote</li>
+          </ul> -->
+        </div>
+
+        <form class="popup-form">
+
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number">
+          </div>
+          <div class="form-group select-city">
+
+            <select class="form-control " required>
+
+              <option value="">Select Cities</option>
+              <option value="pte">New Delhi</option>
+              <option value="gre">Mumbai</option>
+              <option value="toefl">Bangalore</option>
+              <option value="aws">Hyderabad</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <textarea rows="1" placeholder="Tell us about your project"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Send Inquiry
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
   <!-- Footer -->
   <footer class="site-footer" id="site-footer">
-
-
     <!-- Main Footer Content -->
     <div class="footer-main">
       <div class="container">
         <div class="row g-5">
-          <!-- Brand Column -->
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-brand-block">
-              <a href="index.html" class="footer-logo-link d-inline-flex align-items-center gap-2 mb-3">
-
-                <img src="assets/images/logo-white.png" alt="footer-logo" style="max-width: 100px;" />
-              </a>
-              <p class="footer-brand-desc">Your trusted partner for official and affordable English & IT certification
-                exam vouchers. Save big on PTE, GRE, TOEFL, AWS, and more.</p>
-              <div class="footer-social-links">
-                <a href="#" class="footer-social-link" aria-label="Facebook" id="footer-social-facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a href="#" class="footer-social-link" aria-label="Instagram" id="footer-social-instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="footer-social-link" aria-label="LinkedIn" id="footer-social-linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-
-              </div>
-            </div>
-          </div>
-
           <!-- Quick Links -->
-          <div class="col-lg-2 col-md-6 col-6">
-            <h5 class="footer-col-title">Quick Links</h5>
+          <div class="col-lg-3 col-md-6 col-6">
+            <h5 class="footer-col-title">Useful Links</h5>
             <ul class="footer-nav-list" id="footer-quick-links">
               <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
               <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-              <li><a href="vouchers.html"><i class="fas fa-chevron-right"></i> Vouchers</a></li>
+              <!-- <li><a href="vouchers.html"><i class="fas fa-chevron-right"></i> Vouchers</a></li> -->
+              <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
               <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
             </ul>
           </div>
 
           <!-- Exam Categories -->
           <div class="col-lg-3 col-md-6 col-6">
-            <h5 class="footer-col-title">Exam Categories</h5>
+            <h5 class="footer-col-title">Exam Vouchers</h5>
             <ul class="footer-nav-list" id="footer-categories">
-              <li><a href="exam-vouchers.html"><i class="fas fa-chevron-right"></i> PTE Voucher</a></li>
-              <li><a href="exam-vouchers.html"><i class="fas fa-chevron-right"></i> GRE Voucher</a></li>
-              <li><a href="exam-vouchers.html"><i class="fas fa-chevron-right"></i> TOEFL Voucher</a></li>
-              <li><a href="exam-vouchers.html"><i class="fas fa-chevron-right"></i> Duolingo Voucher</a></li>
+              <li><a href="exam-voucher-detail.html?exam=pte"><i class="fas fa-chevron-right"></i> PTE Voucher</a></li>
+              <li><a href="exam-voucher-detail.html?exam=gre"><i class="fas fa-chevron-right"></i> GRE Voucher</a></li>
+              <li><a href="exam-voucher-detail.html?exam=toefl"><i class="fas fa-chevron-right"></i> TOEFL Voucher</a>
+              </li>
+              <li><a href="exam-voucher-detail.html?exam=duolingo"><i class="fas fa-chevron-right"></i> Duolingo
+                  Voucher</a></li>
 
             </ul>
           </div>
 
           <!-- Contact Info -->
           <div class="col-lg-3 col-md-6">
-            <h5 class="footer-col-title">Get in Touch</h5>
+            <h5 class="footer-col-title">Get In Touch</h5>
             <ul class="footer-contact-list" id="footer-contact-info">
               <li>
                 <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
@@ -1343,7 +1544,14 @@
                 <div class="footer-contact-icon"><i class="fas fa-phone-alt"></i></div>
                 <div>
                   <span class="footer-contact-label">Call Us</span>
-                  <a href="tel:+917838432984">+91-7838432984</a>
+                  <a href="tel:+917838432984">+91-78384 32984</a>
+                </div>
+              </li>
+              <li>
+                <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                  <span class="footer-contact-label">Working Hours</span>
+                  <span class="footer-contact-value">Mon - Sat: 9AM - 7PM</span>
                 </div>
               </li>
               <!-- <li>
@@ -1353,40 +1561,39 @@
                   <span class="footer-contact-value">New Delhi, India</span>
                 </div>
               </li>
-              <li>
-                <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
-                <div>
-                  <span class="footer-contact-label">Working Hours</span>
-                  <span class="footer-contact-value">Mon - Sat: 9AM - 7PM</span>
-                </div>
-              </li> -->
+             -->
             </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-col-title">Follow Us </h5>
+            <div class="footer-brand-block">
+              <!-- <a href="index.html" class="footer-logo-link d-inline-flex align-items-center gap-2 mb-3">
+
+                <img src="assets/images/logo-white.png" alt="footer-logo" style="max-width: 100px;" />
+              </a> -->
+
+              <div class="footer-social-links">
+                <a href="https://www.facebook.com/voucherinfinity/" class="footer-social-link" aria-label="Facebook"
+                  id="footer-social-facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/voucherinfinity/" class="footer-social-link" aria-label="Instagram"
+                  id="footer-social-instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/voucherinfinity/" class="footer-social-link"
+                  aria-label="LinkedIn" id="footer-social-linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Trust Badges Row -->
-        <div class="footer-trust-row">
-          <div class="footer-trust-badge">
-            <i class="fas fa-shield-alt"></i>
-            <span>100% Genuine Vouchers</span>
-          </div>
-          <div class="footer-trust-badge">
-            <i class="fas fa-bolt"></i>
-            <span>Instant Delivery</span>
-          </div>
-          <div class="footer-trust-badge">
-            <i class="fas fa-headset"></i>
-            <span>24/7 Support</span>
-          </div>
-          <div class="footer-trust-badge">
-            <i class="fas fa-lock"></i>
-            <span>Secure Payments</span>
-          </div>
-          <div class="footer-trust-badge">
-            <i class="fas fa-undo"></i>
-            <span>Money Back Guarantee</span>
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -1399,13 +1606,11 @@
           </div>
           <div class="col-md-6 text-center text-md-end">
             <div class="footer-legal-links" id="footer-legal-links">
-              <a href="#">Privacy Policy</a>
+              <a href="privacy-policy.html">Privacy Policy</a>
               <span class="footer-legal-sep">|</span>
-              <a href="#">Terms of Service</a>
-              <span class="footer-legal-sep">|</span>
-              <a href="#">Disclaimer</a>
-              <span class="footer-legal-sep">|</span>
-              <a href="#">Refund Policy</a>
+              <a href="trems-condition.html">Terms of Service</a>
+
+
             </div>
           </div>
         </div>
@@ -1435,15 +1640,16 @@
       window.addEventListener("scroll", function () {
         if (window.scrollY > 1) {
           headerWrapper.classList.add("navbar-scrolled");
-          navbar.classList.remove("pt-lg-4");
+          //navbar.classList.remove("pt-lg-4");
           navbar.classList.add("py-2");
           // Switch logo to the dark version if available
           logo.src = "assets/images/logo.png";
         } else {
           headerWrapper.classList.remove("navbar-scrolled");
           navbar.classList.remove("py-2");
-          navbar.classList.add("pt-lg-4");
+          //navbar.classList.add("pt-lg-4");
           // Switch back to light logo
+          //logo.src = "assets/images/logo.png";
           logo.src = "assets/images/logo-white.png";
         }
       })
