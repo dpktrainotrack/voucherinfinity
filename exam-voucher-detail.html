@@ -211,10 +211,16 @@
     <div class="container">
       <div class="row g-5">
         <!-- Left: Specifications and Features -->
-        <div class="col-lg-7" data-aos="fade-right">
+        <div class="col-lg-8" data-aos="fade-right">
           <div class="info-content-card mb-4">
             <h2 class="mb-4 display-6" id="why-title">Why buy this<span class="text-primary-custom"> voucher?</span>
             </h2>
+            <p class="text-muted leading-relaxed" id="exam-desc-long">
+              Standard exam bookings require credit cards and cost the full retail price. By purchasing our corporate
+              partner vouchers, you get access to exclusive discounted pricing, flexible scheduling, and instant code
+              delivery. You can easily enter the voucher code on the exam checkout portal to complete your registration
+              without any extra fee.
+            </p>
             <p class="text-muted leading-relaxed" id="exam-desc-long">
               Standard exam bookings require credit cards and cost the full retail price. By purchasing our corporate
               partner vouchers, you get access to exclusive discounted pricing, flexible scheduling, and instant code
@@ -255,45 +261,63 @@
         </div>
 
         <!-- Right: Enquiry/Order Form Card -->
-        <div class="col-lg-5" id="booking-form-section" data-aos="fade-left">
-          <div class="enquiry-card-wrapper">
-            <div class=" ">
-              <h2 id="display-6 ">Enquire Exam Voucher</h2>
-              <p>Fill out the form below to receive a secure purchase link. Our
-                specialists reply within 15 minutes.</p>
+        <div class="col-lg-4" id="booking-form-section" data-aos="fade-left">
+          <div class="rounded-4">
+            <div class="popup-content">
 
-              <form action="#" method="post" id="enquiry-form">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required>
-                  <label for="floatingName">Full Name </label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
-                  <label for="floatingEmail">Email Address </label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="tel" class="form-control" id="floatingPhone" placeholder="+91 98765 43210" required>
-                  <label for="floatingPhone">Phone </label>
+              <div class="popup-info  " style="border-radius: 10px 10px 0 0;">
+
+
+                <h2>Let's Discuss</h2>
+
+                <p>
+                  Tell us about your requirements and our experts will
+                  contact you within 24 hours.
+                </p>
+
+                <!-- <ul>
+                      <li>✔ Expert Guidance</li>
+                      <li>✔ Fast Response</li>
+                      <li>✔ Free Quote</li>
+                    </ul> -->
+              </div>
+
+              <form class="popup-form  shadow-lg" style="border-radius:  0 0 10px 10px;">
+
+                <div class="form-group">
+                  <input type="text" placeholder="Full Name" required>
                 </div>
 
-                <div class="form-floating mb-3">
-                  <textarea class="form-control" placeholder="Leave a message here" id="floatingMessage"
-                    style="height: 100px"></textarea>
-                  <label for="floatingMessage">Message / Specific Date (Optional)</label>
+                <div class="form-group">
+                  <input type="email" placeholder="Email Address" required>
                 </div>
 
-                <button type="submit" class="btn btn-submit-enquiry">
-                  Submit Order Enquiry <i class="fa-solid fa-arrow-right ms-1"></i>
+                <div class="form-group">
+                  <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-group select-city">
+
+                  <select class="form-control " required>
+
+                    <option value="">Select Cities</option>
+                    <option value="pte">New Delhi</option>
+                    <option value="gre">Mumbai</option>
+                    <option value="toefl">Bangalore</option>
+                    <option value="aws">Hyderabad</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <textarea rows="1" placeholder="Tell us about your project"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  Send Inquiry
                 </button>
+
               </form>
 
-
-
-              <!-- <div class="support-notice-box">
-                <i class="fa-solid fa-clock"></i>
-                <span><strong>Support hours:</strong> Mon-Sat 9 AM to 7 PM IST. Vouchers are dispatched instantly upon
-                  payment.</span>
-              </div> -->
             </div>
           </div>
         </div>

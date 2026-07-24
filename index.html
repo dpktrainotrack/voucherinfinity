@@ -83,102 +83,15 @@
       color: #fff;
     }
 
-    /* Contact CTA */
-    .contact-cta {
-      padding: 88px 0;
-      margin-top: 40px;
-      background: #f4fbfb;
-    }
+    @media screen and (max-width: 991.98px) {
+      .navbar:not(.sticky) .navbar-toggler .navbar-toggler-icon2 {
+        color: #fff;
+        /* background-color: #fff; */
+      }
 
-    .contact-cta-shell {
-      overflow: hidden;
-      border-radius: 28px;
-      background: #fff;
-      box-shadow: 0 24px 70px rgba(21, 82, 89, .12);
-    }
-
-    .contact-cta-intro {
-      position: relative;
-      height: 100%;
-      padding: clamp(36px, 5vw, 64px);
-      color: #fff;
-      background: linear-gradient(145deg, #123e4a 0%, #1f7f83 100%);
-      overflow: hidden;
-    }
-
-    .contact-cta-intro::before,
-    .contact-cta-intro::after {
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, .12);
-      border-radius: 50%;
-      content: '';
-      pointer-events: none;
-    }
-
-    .contact-cta-intro::before { width: 330px; height: 330px; top: -165px; right: -115px; }
-    .contact-cta-intro::after { width: 220px; height: 220px; bottom: -140px; left: -90px; }
-
-    .contact-cta .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: 50px;
-      color: #fff;
-      background: rgba(255, 255, 255, .1);
-      font-size: .77rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .contact-title {
-      position: relative;
-      z-index: 1;
-      max-width: 410px;
-      margin: 22px 0 16px;
-      color: #fff;
-      font-size: clamp(2rem, 3.3vw, 3rem);
-      font-weight: 700;
-      line-height: 1.16;
-    }
-
-    .contact-desc {
-      position: relative;
-      z-index: 1;
-      max-width: 440px;
-      margin: 0;
-      color: rgba(255, 255, 255, .8);
-      font-size: .98rem;
-      line-height: 1.75;
-    }
-
-    .contact-benefits { position: relative; z-index: 1; display: grid; gap: 15px; margin: 34px 0; }
-    .contact-benefit { display: flex; align-items: center; gap: 12px; font-size: .9rem; font-weight: 500; }
-    .contact-benefit i { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; color: #d4fffb; background: rgba(255, 255, 255, .13); font-size: .75rem; }
-    .contact-response { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 9px; color: rgba(255, 255, 255, .76); font-size: .8rem; }
-    .contact-response span { width: 8px; height: 8px; border-radius: 50%; background: #8af3c1; box-shadow: 0 0 0 5px rgba(138, 243, 193, .14); }
-
-    .contact-form-card { padding: clamp(30px, 5vw, 56px); }
-    .contact-form-card h3 { margin: 0; color: #173f49; font-size: clamp(1.45rem, 2.2vw, 1.9rem); font-weight: 700; }
-    .contact-form-card > p { margin: 8px 0 29px; color: #718187; font-size: .92rem; }
-    .contact-form-card label { display: block; margin-bottom: 8px; color: #38545b; font-size: .82rem; font-weight: 600; }
-    .contact-form-card .form-control { min-height: 50px; padding: 12px 14px; border: 1px solid #dce8e8; border-radius: 10px; color: #173f49; box-shadow: none; font-size: .9rem; }
-    .contact-form-card textarea.form-control { min-height: 108px; resize: vertical; }
-    .contact-form-card .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(59, 173, 168, .13); }
-    .contact-submit { width: 100%; padding: 14px 18px; border: 0; border-radius: 10px; color: #fff; background: linear-gradient(100deg, var(--primary-color), var(--secondary-color)); font-weight: 700; transition: transform .2s ease, box-shadow .2s ease; }
-    .contact-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(49, 143, 187, .23); }
-    .contact-form-note { display: block; margin-top: 15px; color: #8a989d; font-size: .75rem; text-align: center; }
-
-    @media (max-width: 991.98px) {
-      .contact-cta { padding: 60px 0; }
-      .contact-cta-intro { min-height: auto; }
-    }
-
-    @media (max-width: 575.98px) {
-      .contact-cta-shell { border-radius: 20px; }
-      .contact-cta-intro, .contact-form-card { padding: 30px 24px; }
+      .navbar:not(.sticky) .navbar-toggler {
+        border-color: #ffffff;
+      }
     }
   </style>
 
@@ -448,7 +361,9 @@
 
 
         <button class=" navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#heronavbar">
-          <span class="navbar-toggler-icon"></span>
+          <!-- <span class="navbar-toggler-icon"></span> -->
+
+          <i class="fa-solid fa-bars navbar-toggler-icon2"></i>
         </button>
         <div class="collapse navbar-collapse" id="heronavbar">
           <ul class="navbar-nav mx-auto">
@@ -1392,7 +1307,7 @@
   </section>
 
   <!-- Contact CTA Section -->
-  <section class="contact-cta" aria-labelledby="contact-cta-title">
+  <section class="contact-cta py-5" aria-labelledby="contact-cta-title">
     <div class="container">
       <div class="contact-cta-shell">
         <div class="row g-0 align-items-stretch">
@@ -1400,14 +1315,17 @@
             <div class="contact-cta-intro">
               <span class="section-tag"><i class="fa-solid fa-headset"></i> Need help choosing?</span>
               <h2 class="contact-title" id="contact-cta-title">Get the right exam voucher, without the guesswork.</h2>
-              <p class="contact-desc">Tell us what you are preparing for and our voucher specialists will point you to the best option for your exam.</p>
+              <p class="contact-desc">Tell us what you are preparing for and our voucher specialists will point you to
+                the best option for your exam.</p>
 
               <div class="contact-benefits">
-                <div class="contact-benefit"><i class="fa-solid fa-shield-halved"></i><span>Official vouchers from trusted providers</span></div>
-                <div class="contact-benefit"><i class="fa-solid fa-bolt"></i><span>Fast guidance from our expert team</span></div>
+                <div class="contact-benefit"><i class="fa-solid fa-shield-halved"></i><span>Official vouchers from
+                    trusted providers</span></div>
+                <div class="contact-benefit"><i class="fa-solid fa-bolt"></i><span>Fast guidance from our expert
+                    team</span></div>
               </div>
 
-              <div class="contact-response"><span></span> Usually replies within one business day</div>
+              <!-- <div class="contact-response"><span></span> Usually replies within one business day</div> -->
             </div>
           </div>
           <div class="col-lg-7">
@@ -1417,12 +1335,31 @@
 
               <form>
                 <div class="row g-3">
-                  <div class="col-md-6"><label for="contact-name">Full name</label><input id="contact-name" type="text" class="form-control" placeholder="John Doe" required></div>
-                  <div class="col-md-6"><label for="contact-email">Email address</label><input id="contact-email" type="email" class="form-control" placeholder="john@example.com" required></div>
-                  <div class="col-md-6"><label for="contact-phone">Phone number</label><input id="contact-phone" type="tel" class="form-control" placeholder="+91 98765 43210"></div>
-                  <div class="col-md-6"><label for="contact-voucher">Exam voucher</label><select id="contact-voucher" class="form-control" required><option value="">Select an exam</option><option value="pte">PTE</option><option value="gre">GRE</option><option value="toefl">TOEFL</option><option value="aws">AWS</option></select></div>
-                  <div class="col-12"><label for="contact-message">How can we help?</label><textarea id="contact-message" rows="4" class="form-control" placeholder="Tell us which exam you are taking or ask us a question."></textarea></div>
-                  <div class="col-12"><button type="submit" class="contact-submit">Request voucher guidance <i class="fa-solid fa-arrow-right ms-2"></i></button><small class="contact-form-note"><i class="fa-solid fa-lock me-1"></i>Your details stay private and secure.</small></div>
+                  <div class="col-md-6"><label for="contact-name">Full name</label><input id="contact-name" type="text"
+                      class="form-control" placeholder="John Doe" required></div>
+                  <div class="col-md-6"><label for="contact-email">Email address</label><input id="contact-email"
+                      type="email" class="form-control" placeholder="john@example.com" required></div>
+                  <div class="col-md-6"><label for="contact-phone">Phone number</label><input id="contact-phone"
+                      type="tel" class="form-control" placeholder="+91 98765 43210"></div>
+                  <div class="col-md-6"><label for="contact-voucher"> Select City</label><select id="contact-voucher"
+                      class="form-control" required>
+
+                      <option value="">Select City</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Mumbai">Mumbai</option>
+                      <option value="Bangalore">Bangalore</option>
+                      <option value="Hyderabad">Hyderabad</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Kolkata">Kolkata</option>
+                      <option value="Pune">Pune</option>
+                      <option value="Ahmedabad">Ahmedabad</option>
+                    </select></div>
+                  <div class="col-12"><label for="contact-message">How can we help?</label><textarea
+                      id="contact-message" rows="4" class="form-control"
+                      placeholder="Tell us which exam you are taking or ask us a question."></textarea></div>
+                  <div class="col-12"><button type="submit" class="contact-submit">Request voucher guidance <i
+                        class="fa-solid fa-arrow-right ms-2"></i></button><small class="contact-form-note"><i
+                        class="fa-solid fa-lock me-1"></i>Your details stay private and secure.</small></div>
                 </div>
               </form>
             </div>
@@ -1500,7 +1437,7 @@
   <!-- Footer -->
   <footer class="site-footer" id="site-footer">
     <!-- Main Footer Content -->
-    <div class="footer-main">
+    <div class="footer-main ">
       <div class="container">
         <div class="row g-5">
           <!-- Quick Links -->
