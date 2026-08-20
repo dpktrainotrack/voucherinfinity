@@ -76,7 +76,7 @@
     gap: 15px;
     /* margin-bottom: 30px; */
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(109, 109, 109, 0.8);
     padding: 15px 25px;
     border-radius: 12px;
     width: fit-content;
@@ -84,8 +84,8 @@
 }
 
 .price-now {
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 700;
     color: #fff;
 }
 
@@ -119,8 +119,8 @@
     max-width: 320px;
     /* height: 250px; */
     position: relative;
-    border-radius: 20px;
-    padding: 25px;
+    border-radius: 10px;
+    padding: 10px;
     color: #ffffffd5;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
@@ -132,7 +132,7 @@
     justify-content: space-between;
 }
 
-.voucher-card-interactive::before {
+/* .voucher-card-interactive::before {
     width: 60px;
     height: 60px;
     border-radius: 80px;
@@ -142,15 +142,15 @@
     left: -40px;
     content: "";
     position: absolute;
-}
+} */
 
 .voucher-card-interactive:hover {
     transform: rotateY(12deg) rotateX(8deg) translateY(-5px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Card Glow Overlay */
-.voucher-card-interactive::after {
+
+/* .voucher-card-interactive::after {
     width: 60px;
     height: 60px;
     border-radius: 80px;
@@ -160,7 +160,7 @@
     right: -40px;
     content: "";
     position: absolute;
-}
+} */
 
 /* Voucher Brands Backgrounds */
 .voucher-card-interactive.pte-theme {
@@ -171,7 +171,7 @@
 
 .voucher-card-interactive img {
     width: 100%;
-    object-fit: none;
+    object-fit: cover;
 }
 
 /* .voucher-card-interactive.gre-theme {
@@ -698,9 +698,7 @@
 .price-now {
     color: var(--dark-color);
     font-family: Poppins, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -.05em;
+
 }
 
 .price-was {
@@ -933,9 +931,6 @@
     font-size: 2.25rem;
 }
 
-.price-now {
-    font-size: 2.15rem;
-}
 
 .detail-hero-cta .btn {
     width: 100%;
@@ -958,4 +953,21 @@
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.hero-left-card {
+
+    /* margin-bottom: 30px; */
+    /* background: rgba(255, 255, 255, 0.05); */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 12px;
+    width: fit-content;
+    backdrop-filter: blur(10px);
+}
+
+.price-old {
+    font-size: 20px;
+    font-weight: 600;
+
 }

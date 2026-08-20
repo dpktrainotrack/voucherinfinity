@@ -3060,7 +3060,7 @@ section:nth-child(even) {
 
 /* Left Side */
 .popup-info {
-  padding: 30px;
+  padding: 20px;
   color: #fff;
   background: var(--primary-gradient);
   position: relative;
@@ -3101,7 +3101,7 @@ section:nth-child(even) {
 
 .popup-info h2 {
   font-family: var(--heading-font);
-  font-size: 32px;
+  font-size: 22px;
   line-height: 1.2;
   margin-bottom: 10px;
   color: #fff;
@@ -3157,13 +3157,14 @@ section:nth-child(even) {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  border: 2px solid transparent;
+  border: 1px solid rgb(204, 204, 204);
   background: var(--light-bg);
-  padding: 16px 20px;
+  padding: 10px 14px;
   font-size: 15px;
   border-radius: var(--border-radius-sm);
   font-family: var(--body-font);
   transition: var(--transition);
+
 }
 
 .form-group textarea {
@@ -3175,6 +3176,7 @@ section:nth-child(even) {
   border-radius: var(--border-radius-sm);
   font-family: var(--body-font);
   transition: var(--transition);
+  border: 1px solid rgb(204, 204, 204);
 }
 
 .form-group input:focus,
