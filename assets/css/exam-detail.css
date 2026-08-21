@@ -953,6 +953,12 @@
     background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 991px) {
+    .detail-hero-section {
+        background-position: center;
+    }
+}
+
 .hero-left-card {
 
     /* margin-bottom: 30px; */
