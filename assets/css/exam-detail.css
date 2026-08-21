@@ -10,7 +10,7 @@
 
 /* Header Spacer */
 .detail-hero-section {
-    padding: 60px 0;
+
     position: relative;
     overflow: hidden;
 
@@ -120,7 +120,7 @@
     /* height: 250px; */
     position: relative;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
     color: #ffffffd5;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
@@ -354,15 +354,15 @@
 
 
 .info-content-card {
-    background: #fff;
-    border-radius: var(--border-radius-md);
-    padding: 40px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    /* background: #fff; */
+    /* border-radius: var(--border-radius-md); */
+    /* padding: 15px; */
+    /* box-shadow: var(--shadow-sm); */
+    /* border: 1px solid rgba(0, 0, 0, 0.04); */
 }
 
 .specifications-table {
-    margin-top: 25px;
+
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -413,7 +413,7 @@
 
 .timeline-step {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .timeline-step:last-child {
@@ -938,9 +938,7 @@
 
 .info-section,
 .timeline-section,
-.faq-section {
-    padding: 58px 0;
-}
+.faq-section {}
 
 
 .specifications-table tbody td {
@@ -970,4 +968,17 @@
     font-size: 20px;
     font-weight: 600;
 
+}
+
+.work-flow-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px;
+    width: 100%;
+
+    /* Limits maximum expansion on ultra-wide screens */
+    margin: 0 auto;
+    /* Centers the whole container */
+    box-sizing: border-box;
+    display: grid;
+    gap: 15px;
 }
